@@ -34,7 +34,7 @@ class JWTToken{
         try{
             $key = env('JWT_KEY');
             $decoded = JWT::decode($token, new Key($key, 'HS256'));
-            return $decoded->email;
+            return $decoded->userEmail;
         } catch(Exception $e){
             return $e->getMessage();
             // return 'unauthorized';
